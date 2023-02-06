@@ -1,0 +1,14 @@
+---
+import JobEntry from '../../layouts/resume/JobEntry.astro';
+
+const jobEntries = await Astro.glob('../../data/job-entries/*.{md,mdx}'); //todo sort
+---
+
+<h3>Professional Experience</h3>
+<section>
+  {
+    jobEntries.map((entry) => (
+      <JobEntry {...entry.frontmatter}>{<entry.Content />}</JobEntry>
+    ))
+  }
+</section>
