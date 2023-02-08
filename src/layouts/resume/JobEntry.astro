@@ -11,7 +11,20 @@ type Props = MarkdownLayoutProps<{
 const { companyName, title, startDate, endDate = 'present' } = Astro.props;
 ---
 
+<style>
+  .company-name {
+    color: rgb(18, 119, 53, 1);
+  }
+
+  h4 {
+    margin: 0;
+  }
+</style>
+
 <section>
-  <h4><strong>{companyName}</strong> | {title} | {startDate} - {endDate}</h4>
+  <h4>
+    <strong><span class="company-name">{companyName}</span></strong> | {title} |
+    {startDate} - {endDate}
+  </h4>
   <slot />
 </section>

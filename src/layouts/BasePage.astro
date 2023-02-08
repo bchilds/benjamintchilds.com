@@ -2,12 +2,16 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import BaseHead from '../components/BaseHead.astro';
+
+export type Props = {
+  bodyClass?: string;
+};
 ---
 
-<html lang='en'>
+<html lang="en">
   <BaseHead />
   <Header />
-  <body>
+  <body class={Astro.props.bodyClass}>
     <slot />
     <Footer />
   </body>

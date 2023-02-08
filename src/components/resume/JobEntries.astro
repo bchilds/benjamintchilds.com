@@ -1,14 +1,36 @@
 ---
 import JobEntry from '../../layouts/resume/JobEntry.astro';
+import SectionTitle from './SectionTitle.astro';
 
-const jobEntries = await Astro.glob('../../data/job-entries/*.{md,mdx}'); //todo sort
+const jobEntries = await Astro.glob('../../data/job-entries/*.{md,mdx}');
+const sortedEntries = jobEntries
+  .sort((a, b) => {
+    if (a.frontmatter.startDate < b.frontmatter.startDate) {
+      return -1;
+    }
+    if (a.frontmatter.startDate > b.frontmatter.startDate) {
+      return 1;
+    }
+    // a must be equal to b
+    return 0;
+  })
+  .reverse();
 ---
 
 <section>
-  <h3>Professional Experience</h3>
-  {
-    jobEntries.map((entry) => (
-      <JobEntry {...entry.frontmatter}>{<entry.Content />}</JobEntry>
-    ))
-  }
+  <SectionTitle>Professional Experience</SectionTitle>
+  <div class="entries-container">
+    {
+      sortedEntries.map((entry) => (
+        <JobEntry {...entry.frontmatter}>{<entry.Content />}</JobEntry>
+      ))
+    }
+  </div>
+  <style>
+    .entries-container {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+  </style>
 </section>

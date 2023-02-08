@@ -6,14 +6,24 @@ import AboutMe from '../components/resume/AboutMe.astro';
 import JobEntries from '../components/resume/JobEntries.astro';
 ---
 
-<BasePage>
-  <h5>
-    benjamin.t.childs@gmail.com | 817-360-0163 | Austin, TX | <a
-      href="www.github.com/bchilds">github.com/bchilds</a
-    >
-  </h5>
+<BasePage bodyClass="resume-page">
   <JobEntries />
   <SkillsComponent />
   <Education />
   <AboutMe />
+  <style>
+    body {
+      margin: 0 5%;
+    }
+
+    body.resume-page {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    h3 {
+      margin: 0;
+    }
+  </style>
 </BasePage>

@@ -72,3 +72,17 @@ blockquote {
   margin: 0px;
   font-style: italic;
 }
+
+h4 {
+  margin: 8px 0;
+}
+
+h5 {
+  margin: 4px 0;
+  color: #666;
+  font-weight: 700;
+}
+
+ul {
+  margin: 0;
+}
