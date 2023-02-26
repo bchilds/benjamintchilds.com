@@ -6,17 +6,19 @@ import AboutMe from '../components/resume/AboutMe.astro';
 import JobEntries from '../components/resume/JobEntries.astro';
 ---
 
-<BasePage bodyClass="resume-page">
-  <JobEntries />
-  <SkillsComponent />
-  <Education />
-  <AboutMe />
+<BasePage>
+  <div class="resume-page">
+    <JobEntries />
+    <SkillsComponent />
+    <Education />
+    <AboutMe />
+  </div>
   <style>
     body {
       margin: 0 5%;
     }
 
-    body.resume-page {
+    .resume-page {
       display: flex;
       flex-direction: column;
       gap: 16px;
