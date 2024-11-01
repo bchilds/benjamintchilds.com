@@ -2,11 +2,12 @@ export const skills = [
   'Javascript/Typescript',
   'ReactJS',
   'Node',
-  'C#',
-  'API Development',
+  'C#/Dotnet',
+  'Apache Kafka',
+  ' API Development',
   'Redux',
-  'Redux Observables',
   'Express',
+  'Vite',
   'Jest',
   'Git',
   'JIRA',
@@ -15,7 +16,7 @@ export const skills = [
   'Visual Studio/VS Code',
   'AWS API',
   'SQL',
-  'MongoDB/Mongoose',
+  'PostgreSQL',
 ];
 
 export default skills;
